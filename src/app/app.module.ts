@@ -12,12 +12,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     TablasComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule
+    HttpClientModule,// mosulo para realizar peticiones http
+    FormsModule,// modulo de formularios
+    ReactiveFormsModule // modulo de formularios reactivos 
   ],
   providers: [],
   bootstrap: [AppComponent]

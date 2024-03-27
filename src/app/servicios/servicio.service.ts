@@ -8,11 +8,12 @@ import { environment } from 'src/environments/environment';
 export class ServicioService {
 
   constructor(
-		private HttpClient: HttpClient
-	) {
-	}
+    private HttpClient: HttpClient
+  ) {
+  }
 
-	getData() {
-		return this.HttpClient.get(`${environment.url_base}`);
-	}
+  //metodo para cosnulta a api 
+  getData() {
+    return this.HttpClient.get(`${environment.url_base}`);
+  }
 }

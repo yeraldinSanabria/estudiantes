@@ -9,7 +9,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class TablasComponent implements OnInit {
 
+  // variable que almacena estudiantes segun respuesta de api
   public estudiantes: any[] = [];
+
+  // variable que almacena el formulario
   public formulario!: FormGroup
 
   constructor(private services: ServicioService, private formBuilder: FormBuilder,) { }
@@ -19,19 +22,22 @@ export class TablasComponent implements OnInit {
     this.crearFormulario()
   }
 
+  // metodo para consultar los datos devueltos por api
   consultarDatos() {
     this.services.getData().subscribe((data: any) => {
       this.estudiantes = data.estudiantes_aprobados;
     })
   }
 
+  //metodo para crear formulario 
   crearFormulario() {
     this.formulario = this.formBuilder.group({
-      identificacion: [ '',[Validators.required, Validators.min(10000000)]]
+      identificacion: ['', [Validators.required, Validators.min(10000000)]]
     })
   }
 
-  buscar(){
+  //metodo para imprimir resultado de formulario 
+  buscar() {
     console.log(this.formulario.value)
   }
 }
