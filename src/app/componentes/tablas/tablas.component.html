@@ -1,0 +1,27 @@
+
+
+<form [formGroup]="formulario" class="row ">
+    <div class="col-md-8">
+        <input type="number" formControlName="identificacion" class="form-control">
+    </div>
+    <div class="col-md-4">
+        <button type="button" class="btn btn-success" [disabled]="!formulario.valid" (click)="buscar()">Buscar</button>
+    </div>
+</form>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nombre completo</th>
+            <th>Número de documento</th>
+            <th>Nombre del curso</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let estudiante of estudiantes">
+            <td>{{estudiante.estudiante.nombres}}</td>
+            <td>{{estudiante.estudiante.num_documento}}</td>
+            <td>{{estudiante.curso.nombreCurso}}</td>
+        </tr>
+    </tbody>
+</table>
